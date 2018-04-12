@@ -79,7 +79,7 @@ class FileEventHandler(FileSystemEventHandler):
 
 # 读取问题与选项
 def read_question():
-    with open('./question.hortor.net/question/fight/findQuiz', encoding='utf-8') as f:
+    with open('./question-zh.hortor.net/question/bat/findQuiz', encoding='utf-8') as f:
         response = json.load(f)
         question = response['data']['quiz']
         options = response['data']['options']
@@ -168,11 +168,11 @@ def choose_answer(num):
 		s.tap(370, 1144)
 
 if __name__ == "__main__":
-
 	# 开始监听文件变化
     observer = Observer()
+    print("running")
     event_handler = FileEventHandler()
-    observer.schedule(event_handler,"./question.hortor.net/question/fight/",True)
+    observer.schedule(event_handler,"./question-zh.hortor.net/question/bat/",True)
     observer.start()
     try:
         while True:
